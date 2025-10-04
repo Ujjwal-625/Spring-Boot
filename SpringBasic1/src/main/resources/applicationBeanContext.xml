@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+<!--    by this we are telling spring to manage this class a bean-->
+    <bean id="myBean" class="org.example.bean.MyBean">
+
+<!--        it will call the setter of the bean you created-->
+        <property name="message" value="this is set by spring "/>
+    </bean>
+
+</beans>
+
+        <!-- this is config file where we have define bean defination -->
+        <!--        xml schema base configration for spring-->
+        <!--the equivalent file in the xml schema style -->
