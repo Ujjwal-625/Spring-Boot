@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <!--    by this we are telling spring to manage this class a bean-->
+    <bean id="UserDatabaseProvider" class="org.example.practice.UserDatabaseProvider" />
+    <bean id="AnotherDatabaseProvider" class="org.example.practice.AnotherDatabaseProvider" />
+
+<!--    now we will create 2 beans of usermanager 1 for each implementation of userDataProvider -->
+
+    <bean id="UserManagerWithUserDatabaseProvider" class="org.example.practice.UserManager">
+        <constructor-arg ref="UserDatabaseProvider"/>
+    </bean>
+
+    <bean id="UserManagerWithAnotherDatabaseProvider" class="org.example.practice.UserManager">
+        <constructor-arg ref="AnotherDatabaseProvider"/>
+    </bean>
+
+</beans>
